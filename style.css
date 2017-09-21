@@ -1,0 +1,113 @@
+@font-face{
+    font-family: "Trebuchet MS";
+    src: url("font/Trebuchet MS.ttf");
+
+}
+@font-face{
+    font-family: "Vera Crouz";
+    src: url("font/Vera Crouz.ttf");
+}
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+a{
+    color: #000;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    max-width: 920px;
+    margin: auto;
+}
+header{
+    min-height: 145px;
+}
+.inner{
+    display: flex;
+    justify-content: flex-end;
+    max-height: 21px;
+}
+.btnSearch{
+    background: url("images/search.png") no-repeat center top;
+    font-size: 0;
+    width: 25px;
+    height: 20px;
+    margin: 0;
+    padding:0;
+    border: 0;
+    text-indent: -1000em;
+    cursor: pointer; 
+}
+#search{
+    background-color: #a4a3a3;
+    color: #fff;
+    border: 0;
+    height: 21px;
+    padding-left: 5px;
+}
+#search::-webkit-input-placeholder {color:#fff;}
+#search::-moz-placeholder          {color:#fff;}/* Firefox 19+ */
+#search:-moz-placeholder           {color:#fff;}/* Firefox 18- */
+#search:-ms-input-placeholder      {color:#fff;}
+.hel{
+    background-color: #e8e6ef;
+    text-align: center;
+    margin-bottom: 8px;
+    box-shadow:0 10px 15px -4px rgba(0,0,0,0.5);
+}
+.hel p{
+    color: #6e6d72;
+    font-size: 15px;
+    font-family: "Trebuchet MS";
+    height: 40px;
+}
+.hel .l span{
+    font-family: "Vera Crouz";
+    font-size: 45px;
+}
+.hel .o{
+    font-family: "Vera Crouz";
+    font-size: 21px;
+}
+ul{
+    display: flex;
+}
+nav li{
+    list-style: none;
+    align-content: space-between;
+    width: 16.7%;
+    margin-right:2px; 
+    background-color: #939099;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+}
+li:last-child{
+    margin-right:0; 
+}
+.lang{
+    margin: 0 2px 0 2px;
+}
+.activeLang{
+    background-color: #60b527;
+}
+.slider{
+    max-height: 410px;
+}
+.line{
+    margin-top: 25px;
+}
+.line h1{
+    font-family: "Vera Crouz";
+    font-size: 30px;
+    font-weight: 400;
+    margin-left: 30px;
+}
+.showLine{
+    height: 2px;
+    background-color: #6bba36;
+}
