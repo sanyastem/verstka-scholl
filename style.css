@@ -15,12 +15,18 @@
 a{
     color: #000;
 }
+nav a:hover{
+    color: #fff;
+}
 body{
     display: flex;
     flex-direction: column;
     background-color: #fff;
     max-width: 920px;
     margin: auto;
+}
+li{
+    list-style: none;
 }
 header{
     min-height: 145px;
@@ -75,8 +81,7 @@ header{
 ul{
     display: flex;
 }
-nav li{
-    list-style: none;
+header nav li{
     align-content: space-between;
     width: 16.7%;
     margin-right:2px; 
@@ -111,3 +116,122 @@ li:last-child{
     height: 2px;
     background-color: #6bba36;
 }
+main{
+    background-color: #eff1ef;
+    margin-bottom: 40px;
+    box-shadow: 0 15px 21px 2px rgba(0,0,0,0.5);
+    width: 60%;
+}
+aside{
+    display: flex;
+    width: 40%;
+}
+
+/* footer*/
+footer{
+    display: flex;
+    background-color: #60b527;
+}
+footer ul{
+    flex-direction: column;
+}
+nav,.happy,.social{
+    border-right: 1px solid #fff;
+}
+footer nav{
+    padding: 20px 25px 20px 30px;
+}
+footer .happy p:first-child{
+    padding: 20px 20px 0px 20px;
+}
+footer .happy p:last-child{
+    padding: 2px 20px 0px 20px;
+}
+.social a{
+    display: inline-flex;
+}
+.a{
+   padding:  10px 12px 20px 20px;
+}
+.b{
+    padding: 10px 12px 20px 0px;    
+}
+.c{
+    padding: 10px 20px 20px 0;
+}
+.cop p{
+    padding: 35px;
+}
+.block1,.block2{
+    background-color: #eff1ef;
+}
+.headText{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    background-color: #60b527;
+    padding-top: 19px;
+    padding-bottom: 19px;
+    padding-left: 30px;
+    font-family: "Trebuchet MS";
+    font-size: 16px;
+    font-weight: 100;
+    box-shadow: 0 15px 21px 2px rgba(0,0,0,0.5);
+}
+.text p{
+    margin: 0 50px 10px 60px;
+}
+.text a{
+    display: block;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    border-bottom: 2px solid #60b527;
+    width: 20%;
+    float: right;
+}
+.text:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    }
+    .next{
+        display: flex;
+        justify-content: center;
+        margin: 20px 0 20px 0;
+        
+    }
+    .next a{
+        margin-left: 5px;
+        font-size: 14px;
+        padding: 5px 5px 0px 5px;
+    }
+    .next p{
+        margin-top: 5px;
+    }
+    .allNews{
+        display: flex;
+        border-bottom: 2px solid #69b834;
+        justify-content: center;
+        width: 20%;
+        margin: auto;
+    }
+    .in{
+        display: flex;
+        justify-content: center;
+        margin: 10px 0 20px 0;
+    }
+    .in img{
+        margin-left: 2px;
+    }
+    .calendar{
+        background-color: #898592;
+        width:300px ;
+        height: 222px;
+    }
+    .content{
+        display: flex;
+    }
