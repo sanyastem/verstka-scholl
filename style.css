@@ -120,11 +120,11 @@ main{
     background-color: #eff1ef;
     margin-bottom: 40px;
     box-shadow: 0 15px 21px 2px rgba(0,0,0,0.5);
-    width: 60%;
 }
 aside{
     display: flex;
-    width: 40%;
+    margin-left: 30px;
+    flex-direction: column;
 }
 
 /* footer*/
@@ -227,11 +227,117 @@ footer .happy p:last-child{
     .in img{
         margin-left: 2px;
     }
-    .calendar{
+    .calendars{
         background-color: #898592;
-        width:300px ;
+        width: 100%;
         height: 222px;
+        margin-top: 10px;
+        box-shadow: 0 15px 21px -5px rgba(0,0,0,0.5);
+        border-radius: 50px 0 0 0;
     }
     .content{
         display: flex;
     }
+    .plan{
+        background-color: #dbd6e5;
+        height: 180px;
+        margin-top: 25px;
+        box-shadow: 0 15px 21px -5px rgba(0,0,0,0.5);
+    }
+    .plan h3{
+        padding: 9px 0px 9px 20px;
+        background-color: #60b527;
+        font-size: 16px;
+        font-weight: 500;
+        box-shadow: 0 15px 21px -5px rgba(0,0,0,0.5);
+    }
+    .site h3{
+        padding: 9px 0px 9px 20px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .calendars h3{
+        padding: 9px 0px 9px 20px;
+        font-size: 16px;
+        font-weight: 500;
+        float: left;
+    }
+    .calendars h3:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+        }
+    .line:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+        }
+    .plan h3 span,.site h3 span,.calendars h3 span{
+        font-family: "Vera Crouz";
+        font-size: 25px;
+    }
+    .plan p{
+        margin-top: 30px;
+        text-align: center;
+        border-bottom: 2px solid #60b527;
+        font-weight: bold;
+    }
+    .site{
+        background-color: #898592;
+        height: 72.5%;
+        margin-top: 40px;
+        box-shadow: 0 15px 21px -5px rgba(0,0,0,0.5);
+        padding: 0 15px;
+    }
+    @media screen and (max-width:700px) {
+        .content{
+            flex-direction: column;
+        }
+    }
+    .site a{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+    /*Calendar*/
+    .calendar {
+        font-size: 16px;
+        border: none;
+      }
+      .calendar .calendar-head div {
+        color: #fff;
+      }
+      .calendar .calendar-head div span{
+          color:#000;
+      }
+      .calendar-head{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 60px;
+      }
+      .calendar .calendar-body div {
+
+        margin: 4px;
+        color: #3b3b3b;
+      }
+      .calendar-body{
+        width: 290px;
+      }
+      .calendar .calendar-body div.no-day {
+        background: none;
+      }
+      .calendar .calendar-body div.cur-day {
+        background: #60b527;
+        color: #fff;
+      }
+      .lines{
+          background-color: #60b527;
+          width: 50%;
+          height: 50px;
+          float: right;
+      }
