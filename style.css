@@ -304,40 +304,73 @@ footer .happy p:last-child{
         margin-bottom: 40px;
     }
     /*Calendar*/
-    .calendar {
-        font-size: 16px;
-        border: none;
-      }
-      .calendar .calendar-head div {
-        color: #fff;
-      }
-      .calendar .calendar-head div span{
-          color:#000;
-      }
-      .calendar-head{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        margin-top: 60px;
-      }
-      .calendar .calendar-body div {
+  .arrow {
+       position: absolute;
+       top: 6.5px;
+       text-decoration: none;
+       font-size: 21px;
+       color: #000000;
+       cursor: pointer;
+   }
+          
+  .arrow:active {
+       color: #221f1f;
+   }
 
-        margin: 4px;
-        color: #3b3b3b;
-      }
-      .calendar-body{
-        width: 290px;
-      }
-      .calendar .calendar-body div.no-day {
-        background: none;
-      }
-      .calendar .calendar-body div.cur-day {
-        background: #60b527;
-        color: #fff;
-      }
+   table#calendar {
+    padding-top: 15px;
+    font-size: 16px;
+       text-align: center;
+   }
+   #calendar caption {
+       line-height:37px;
+       font-style: italic;
+       font-size: 17px;
+       color: hsl(0, 0%, 88%);
+       background: rgba(90, 55, 194, 0.74);
+   }
+   #calendar th {
+       padding: 5px;
+       cursor: default;
+   }
+
+          #calendar td.prev-month, #calendar td.next-month {
+              color:#224dc4;
+          }
+
+          #calendar td:nth-child(6):not(.next-month):not(.prev-month), #calendar td:nth-child(7):not(.next-month):not(.prev-month) {
+              color: #fff;
+          }
+          #calendar td.today span {
+              display: block;
+              width: 30px;
+              height: 30px;
+              margin-left: 20px;
+              line-height: 30px;
+              border-radius: 100%;
+              background: #07a826;
+              color: #000;
+          }
+          
+          #calendar td.today span:hover {
+              background: #0080ff;
+          }
       .lines{
           background-color: #60b527;
           width: 50%;
           height: 50px;
           float: right;
+      }
+      .calendars img{
+        position: relative;
+        top: -130px;
+        width: 92px;
+        left: 210px;
+      }
+      #showDate{
+        color: #fff;
+        text-align: center;
+        padding: 15px 0;
+        font-size: 20px;
+        font-weight: bold;
       }

@@ -189,19 +189,15 @@
         <aside>
             <div class="calendars">
                 <h3><span>К</span>алендарь</h3>
-                <div class="lines"></div>
-                <div class="calendar">
-                    <div class="calendar-head">
-                      <div>ПН</div>
-                      <div>ВТ</div>
-                      <div>СР</div>
-                      <div>ЧТ</div>
-                      <div>ПТ</div>
-                      <div><span>СБ</span></div>
-                      <div><span>ВС</span></div>
-                    </div>
-                    <div class="calendar-body"></div>
-                  </div>
+                <div class="lines">
+                    <p id="showDate"></p>
+                </div>
+                <div id="wrapper">
+                    <!--a href="#" class="arrow" id="prev">&#9668;</a>
+                    <a href="#" class="arrow" id="next">&#9658;</a-->
+                     <table></table>
+                 </div>
+                 <img src="images/перо.png" alt="">
             </div>
             <div class="plan">
                 <h3><span>П</span>лан мероприятий</h3>
@@ -249,9 +245,137 @@
             <p></p>
         </div>
     </footer>
-    <script>
-    console.log("hello");
+    <script>      
+        (function () {
+    var tblF, prev, next, wrap = document.getElementById("wrapper"),
+        table;
+
+    function createCalendar(id, year, month, cal) {
+        function getDay(d) {
+            var day = d.getDay();
+            if (day === 0) day = 7;
+            return day - 1;
+        }
+        var wrap = document.getElementById(id);
+        table = document.getElementsByTagName("table")[0], date = new Date(year, month - 1);
+        table.id = cal;
+        var monthInfo = {
+            0: "Январь",
+            1: "Февраль",
+            2: "Март",
+            3: "Апрель",
+            4: "Май",
+            5: "Июнь",
+            6: "Июль",
+            7: "Август",
+            8: "Сентябрь",
+            9: "Октябрь",
+            10: "Ноябрь",
+            11: "Декабрь"
+        };
+        var tbl = '<tr><th>ПН</th><th>ВТ</th><th>СР</th><th>ЧТ</th><th>ПТ</th><th style="color:#fff;">СБ</th><th style="color:#fff;">ВС</th></tr><tr>';
+        var Month = date.getMonth();
+        
+        var corD = new Date(year,month-1,0),count = -1,res = [];
+        
+        for(var i = 1; i<corD.getDate()+1; i++) {
+            res.push(i)
+        }
+        res = res.reverse()
+        for (var i = 0; i<getDay(date); i++) {
+            count++
+            tbl += '<td class="prev-month">'+res[count]+'</td>';
+        }
+        
+
+        while (Month === date.getMonth()) {
+            tbl += "<td>" + date.getDate() + "</td>";
+            if (getDay(date) === 6) {
+                tbl += "</tr><tr>";
+            }
+
+            date.setDate(date.getDate() + 1);
+        }
+        var dateOfnextMonth = new Date(year, month),cnt = -1;
+        if (getDay(date) !== 0) {
+            for (var i = getDay(date); i < 7; i++) {
+                cnt++
+                var incr = dateOfnextMonth.getDate()+cnt;
+                tbl += '<td class="next-month">'+incr +'</td>';
+            }
+        }
+        table.innerHTML = tbl;
+        wrap.appendChild(table);
+        
+        var prevMon = document.querySelectorAll(".prev-month"),res2 = [];
+        for (var i = 0,l = prevMon.length; i<l; i++) {
+            var prevInf = prevMon[i].innerHTML;
+            res2.push(prevInf);
+        }
+        res2 = res2.reverse();
+        for (var i = 0,rl = prevMon.length; i<rl; i++) {
+            prevMon[i].innerHTML = res2[i]
+        }
+        var daysInf = ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'];
+        //tblF = document.getElementById(cal), capt = document.createElement("caption"), search = tblF.getElementsByTagName("td");
+        capt.innerHTML += monthInfo[month - 1] + " " + year;
+        tblF.insertBefore(capt, tblF.firstChild);
+        var today = new Date(),
+            y = today.getFullYear(),
+            m = today.getMonth() + 1;
+        for (var i = 0, len = search.length; i < len; i++) {
+            if (search[i].innerHTML === String(today.getDate()) && (y === year) && (m === month)) {
+                var txt = search[i].innerHTML;
+                search[i].className = "today";
+                search[i].innerHTML = "<span>"+txt+"</span>"
+                search[i].title = "Сегодня: "+monthInfo[month-1]+" "+today.getFullYear()+" "+"\n\u0020\u0020\u0020\u0020\u0020\u0020 \u0020"+daysInf[today.getDay()];
+            }
+        }
+
+    }
+    var ddd = new Date(),
+        year = ddd.getFullYear(),
+        mon = ddd.getMonth();
+    createCalendar("wrapper", year, mon + 1, "calendar");
+
+
+    prev = document.getElementById("prev");
+    next = document.getElementById("next");
+
+    prev.onclick = function () {
+        mon -= 1;
+        if (mon === -1) {
+            mon = 11;
+            year -= 1;
+        }
+        createCalendar("wrapper", year, mon + 1, "calendar");
+        ddd.setMonth(mon);
+        ddd.setFullYear(year);
+    };
+
+    next.onclick = function () {
+        mon += 1;
+        if (mon === 12) {
+            mon = 0;
+            year += 1;
+        }
+        createCalendar("wrapper", year, mon + 1, "calendar");
+        ddd.setMonth(mon);
+        ddd.setFullYear(year);
+    };
+    document.onmousedown = document.onselectstart = function (e) {
+        var targ = e && e.target || e.srcElement;
+        return (targ.nodeName === "CAPTION" || targ.nodeName === "TD" || targ.nodeName === "TH") ? false : true;
+    };
+})();   
     </script>
-    <script src="js/calendar.js"></script>
+    <script>
+    var data = new Date();
+    var d = data.getDate();
+    var m = data.getMonth();
+    var y = data.getFullYear();
+    var list = document.getElementById('showDate')
+    list.innerText = d+"."+ m +"."+ + y;
+    </script>
 </body>
 </html>

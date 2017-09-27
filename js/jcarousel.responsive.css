@@ -46,11 +46,11 @@
     width: 30px;
     height: 30px;
     text-align: center;
-    background: #4E443C;
-    color: #fff;
+    background: url("images/впараво.png");
+    color: #60b527;
     text-decoration: none;
     text-shadow: 0 0 1px #000;
-    font: 24px/27px Arial, sans-serif;
+    font: 43px/25px Arial, sans-serif;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
