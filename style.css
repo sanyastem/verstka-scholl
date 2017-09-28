@@ -244,6 +244,9 @@ footer .happy p:last-child{
         margin-top: 25px;
         box-shadow: 0 15px 21px -5px rgba(0,0,0,0.5);
     }
+    .plan a:hover{
+        color: #fff;
+    }
     .plan h3{
         padding: 9px 0px 9px 20px;
         background-color: #60b527;
@@ -292,6 +295,9 @@ footer .happy p:last-child{
         margin-top: 40px;
         box-shadow: 0 15px 21px -5px rgba(0,0,0,0.5);
         padding: 0 15px;
+    }
+    .happy a:hover{
+        color: #fff;
     }
     @media screen and (max-width:700px) {
         .content{
