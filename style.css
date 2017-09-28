@@ -141,10 +141,10 @@ nav,.happy,.social{
 footer nav{
     padding: 20px 25px 20px 30px;
 }
-footer .happy p:first-child{
+footer .happy a:first-child{
     padding: 20px 20px 0px 20px;
 }
-footer .happy p:last-child{
+footer .happy a:last-child{
     padding: 2px 20px 0px 20px;
 }
 .social a{
