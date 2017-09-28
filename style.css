@@ -374,3 +374,24 @@ footer .happy p:last-child{
         font-size: 20px;
         font-weight: bold;
       }
+      @media screen and (max-width:760px){
+        header nav li{
+            padding-bottom: 0;
+        }
+      }
+      @media screen and (max-width:700px){
+        .calendars{
+            margin: auto;
+            width: 50%;
+        }
+        .plan,.site{
+            margin-right: 25px;
+        }
+        .site{
+            margin-bottom: 25px;
+        }
+        .a,.b,.c{
+            padding: 10px 10px 0 10px;
+            display: block !important;
+        }
+      }
